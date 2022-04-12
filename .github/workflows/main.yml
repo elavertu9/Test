@@ -16,5 +16,5 @@ jobs:
       - name: Set required status check
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: gh api -X PUT "/repos/elavertu9/Test/branches/main/protection" -f required_status_checks='{[contexts:"lint"]}'
+        run: gh api "/repos/elavertu9/Test/branches/main/protection" -f required_status_checks='{[contexts:"lint"]}'
 
