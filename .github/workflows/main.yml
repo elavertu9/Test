@@ -8,18 +8,16 @@ on:
 
 jobs:
   build:
-    name: lint
-    
+    name: lint 
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v2  
-      - name: Python Linter
-        uses: sunnysid3up/python-linter@master
-        with:
-          source: "src"
-          mypy-options: "--ignore-missing-imports --show-error-codes"
-          pylint-options: "--rcfile=setup.cfg"
-          isort-options: "-w 100"
-          django: false
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+        
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ github.token }}
 
