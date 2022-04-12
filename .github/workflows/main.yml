@@ -10,10 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: Set required status check
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: gh api "/repos/elavertu9/Test/statuses/${{ github.event.pull_request.head.sha }}" -f context="lint" -f state="pending"
-  call-workflow-in-local-repo:
-    uses: ./.github/workflows/linter.yml
 
