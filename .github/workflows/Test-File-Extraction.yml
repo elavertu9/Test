@@ -1,4 +1,4 @@
-name: Test File Extraction
+name: Test File Extraction w/ Copy Command
 
 on:
   workflow_dispatch:
@@ -8,15 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
       - name: Build Docker Image
         working-directory: docker
         run: ./build-image.sh
         
-#       - name: Copy test file out of container
-#         run: 
-      
-      - name: Print working directory and contents
-        run: |
-          pwd
-          ls
+      - name: Start containers
+        run: docker-compose -f "docker/docker-compose.yml" up -d
+        
+      - name: Copy test file out of container
+        run: docker cp testing-github-actions-container:/tmp/test.txt .
+        
+      - name: Upload test results as GitHub Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: test.txt
