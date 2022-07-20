@@ -1,6 +1,10 @@
 FROM alpine:latest
 
-#RUN echo "Hello from inside the container" > /tmp/test.txt
-RUN echo "Hello from inside the container" > /test-vol-dir/test.txt
+ARG BUILD_HOME=/usr/local
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+# Copy in resource files
+COPY resources/* $BUILD_HOME/resources/
+
+#RUN echo "Hello from inside the container" > /tmp/test.txt
+
+ENTRYPOINT ["/usr/local/resources/start.sh"]
