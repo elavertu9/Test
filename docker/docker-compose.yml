@@ -9,7 +9,7 @@ services:
 #      - "test-vol:/test-vol-dir"
     volumes:
       - type: bind
-        source: tmp/test
+        source: /tmp/test
         target: /test-vol-dir
 #      - type: volume
 #        source: test-vol
