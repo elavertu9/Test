@@ -16,8 +16,8 @@ jobs:
       - name: Start containers
         run: docker-compose -f "docker/docker-compose.yml" up -d
         
-      - name: Copy test file out of container
-        run: docker cp testing-github-actions-container:/tmp/test.txt .
+#       - name: Copy test file out of container
+#         run: docker cp testing-github-actions-container:/tmp/test.txt .
       
       - name: Print working directory and contents
         run: |
