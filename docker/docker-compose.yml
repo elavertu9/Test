@@ -6,10 +6,7 @@ services:
     container_name: testing-github-actions-container
     hostname: testing-github-actions-container
     volumes:
-      - type: volume
-        source: /tmp/test
-        target: /test-vol-dir
-#      - "test-vol:/test-vol-dir"
+      - "test-vol:/tmp/test-vol-dir"
 
 volumes:
   test-vol:
