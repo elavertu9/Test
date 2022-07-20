@@ -18,7 +18,7 @@ jobs:
 #       - name: Copy test file out of container
 #         run: docker cp testing-github-actions-container:/tmp/test.txt .
       - name: Inspect docker volume
-        run: docker docker_test-vol inspect
+        run: docker volume docker_test-vol inspect
         
 #       - name: Upload test results as GitHub Artifact
 #         uses: actions/upload-artifact@v2
