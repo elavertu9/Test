@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-docker-image:
+  test-file-extraction:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,8 +17,13 @@ jobs:
         
 #       - name: Copy test file out of container
 #         run: docker cp testing-github-actions-container:/tmp/test.txt .
-      - name: List docker volumes
-        run: docker volume ls
+
+#       - name: Inspect docker volume
+#         run: docker volume inspect docker_test-vol
+        
+#         /var/lib/docker/volumes/docker_test-vol/_data
+      - name: Look at contents of mounted volume
+        run: ls /
         
 #       - name: Upload test results as GitHub Artifact
 #         uses: actions/upload-artifact@v2
