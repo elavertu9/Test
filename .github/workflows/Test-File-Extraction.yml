@@ -23,7 +23,7 @@ jobs:
         
 #         /var/lib/docker/volumes/docker_test-vol/_data
       - name: Look at contents of mounted volume
-        run: ls /tmp/
+        run: ls /tmp/test-vol/
         
 #       - name: Upload test results as GitHub Artifact
 #         uses: actions/upload-artifact@v2
