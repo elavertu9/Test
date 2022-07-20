@@ -1,0 +1,13 @@
+name: Test File Extraction
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker Image
+        working-directory: docker
+        run: ./build-image.sh
