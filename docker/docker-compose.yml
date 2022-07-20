@@ -5,8 +5,15 @@ services:
     image: test-github-actions-image
     container_name: testing-github-actions-container
     hostname: testing-github-actions-container
+#    volumes:
+#      - "test-vol:/test-vol-dir"
     volumes:
-      - "test-vol:/tmp/test-vol-dir"
+      - type: bind
+        source: tmp/test
+        target: /test-vol-dir
+      - type: volume
+        source: test-vol
+        target: /test-vol-dir
 
 volumes:
   test-vol:
