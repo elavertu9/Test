@@ -23,3 +23,16 @@ jobs:
         run: |
           pwd
           ls
+
+      - name: Examine directory structure
+        run: |
+          pwd
+          ls
+          echo "========"
+          cd ../
+          pwd
+          ls
+          echo "========"
+          cd ../
+          pwd
+          ls
