@@ -11,9 +11,9 @@ services:
       - type: bind
         source: tmp/test
         target: /test-vol-dir
-      - type: volume
-        source: test-vol
-        target: /test-vol-dir
+#      - type: volume
+#        source: test-vol
+#        target: /test-vol-dir
 
 volumes:
   test-vol:
