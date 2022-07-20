@@ -8,8 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: Build Docker Image
         working-directory: docker
         run: ./build-image.sh
-      - name: Print working directory
-        run: pwd
+        
+#       - name: Copy test file out of container
+#         run: 
+      
+      - name: Print working directory and contents
+        run: |
+          pwd
+          ls
