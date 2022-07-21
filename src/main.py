@@ -13,5 +13,5 @@ def create_file_in_mount_dir():
 
 
 if __name__ == "__main__":
-    wait()
+    #wait()
     create_file_in_mount_dir()
