@@ -2,8 +2,8 @@ import time
 
 
 def wait():
-    print("Waiting 10 seconds...")
-    time.sleep(30)
+    print("Waiting 15 seconds...")
+    time.sleep(15)
 
 
 def create_file_in_mount_dir():
