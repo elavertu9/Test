@@ -6,10 +6,10 @@ ENV TEST_SECRET_ENV=$TEST_SECRET_ARG
 
 RUN apk add dos2unix
 
-ADD start.sh /
+COPY start.sh /entrypoint.sh
 
-RUN chmod +x /start.sh
+RUN chmod +x /entrypoint.sh
 
-RUN dos2unix /start.sh
+RUN dos2unix /entrypoint.sh
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
