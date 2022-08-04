@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build Docker Image
         working-directory: var-test
-        run: docker build --no-cache -t var-test-image --build-arg TEST_SECRET_ARG=$TEST_SECRET --build-arg HELLO="Hello from build args" .
+        run: docker build --no-cache -t var-test-image --build-arg TEST_SECRET_ARG=$TEST_SECRET --build-arg HELLO="Hello" .
 
       - name: Start container
         run: docker run var-test-image
