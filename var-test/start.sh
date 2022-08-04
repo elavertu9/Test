@@ -3,7 +3,7 @@ echo "Hello from start.sh..."
 
 echo $TEST_SECRET_ENV
 
-if [ $TEST_SECRET_ENV == "testsecret" ];
+if [ "$TEST_SECRET_ENV" == "testsecret" ];
 then
   echo "The secret is what you expect"
 else
