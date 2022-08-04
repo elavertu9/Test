@@ -11,6 +11,9 @@ jobs:
       - name: Build Docker Image
         working-directory: var-test
         run: docker build --no-cache -t var-test-image --build-arg TEST_SECRET_ARG=$TEST_SECRET --build-arg HELLO="Hello" .
+        
+      - name: Check variable
+        run: echo $TEST_SECRET
 
       - name: Start container
         run: docker run var-test-image
