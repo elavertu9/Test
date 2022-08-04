@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "Hello from start.sh..."
 
 echo $TEST_SECRET_ENV
