@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build Docker Image
         working-directory: secret-test
-        run: docker build -t test-env-image --build-arg TEST_SECRET_ARG=${{secrets.TEST_SECRET}} .
+        run: docker build -t test-env-image --build-arg TEST_SECRET_ARG=test .
         
       - name: Start container
         run: docker run test-env-image
