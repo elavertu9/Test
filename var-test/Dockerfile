@@ -4,7 +4,7 @@ ARG TEST_SECRET_ARG
 
 ENV TEST_SECRET_ENV=$TEST_SECRET_ARG
 
-ENV TESTER="I am a test variable"
+ENV TESTER=$HELLO
 
 COPY start.sh /entrypoint.sh
 
