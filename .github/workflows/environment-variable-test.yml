@@ -1,0 +1,16 @@
+name: Environment Variable Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-environment-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker Image
+        working-directory: var-test
+        run: docker build --no-cache -t var-test-image --build-arg TEST_SECRET_ARG=$TEST_SECRET .
+
+      - name: Start container
+        run: docker run var-test-image
