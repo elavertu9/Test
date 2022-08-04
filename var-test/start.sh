@@ -1,14 +1,16 @@
 #!/bin/sh
 echo "Hello from start.sh..."
 
-#echo "$TEST_SECRET_ENV"
+echo "$TEST_SECRET_ENV"
 
-echo "$Hello"
+#echo "$Hello"
 
-HELLO_COMPARISON="Hello"
+#HELLO_COMPARISON="Hello"
 
-#if [ "$TEST_SECRET_ENV" == "testsecret" ];
-if [ "$HELLO" == "$HELLO_COMPARISON" ]; then
+TEST_SECRET_COMPARISON="testsecret"
+
+if [ "$TEST_SECRET_ENV" == "$TEST_SECRET_COMPARISON" ]; then
+#if [ "$HELLO" == "$HELLO_COMPARISON" ]; then
   echo "The secret is what you expect"
 else
   echo "The secret is NOT what you expect"
