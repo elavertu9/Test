@@ -1,7 +1,9 @@
 #!/bin/sh
 echo "Hello from start.sh..."
 
-echo $TEST_SECRET_ENV
+echo "$TEST_SECRET_ENV"
+
+echo "$TESTER"
 
 if [ "$TEST_SECRET_ENV" == "testsecret" ];
 then
