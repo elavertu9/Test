@@ -5,7 +5,8 @@ echo "$TEST_SECRET_ENV"
 
 echo "$TESTER"
 
-if [ "$TEST_SECRET_ENV" == "testsecret" ];
+#if [ "$TEST_SECRET_ENV" == "testsecret" ];
+if [ "$HELLO" == "Hello from build args" ];
 then
   echo "The secret is what you expect"
 else
