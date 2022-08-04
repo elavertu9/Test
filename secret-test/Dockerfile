@@ -6,4 +6,4 @@ ENV TEST_SECRET_ENV=$TEST_SECRET_ARG
 
 COPY start.sh .
 
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["ls -la"]
